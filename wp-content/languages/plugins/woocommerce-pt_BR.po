@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-14 03:58:08+0000\n"
+"PO-Revision-Date: 2024-05-14 18:00:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3680,6 +3680,10 @@ msgstr "Quantidade de estoque baixo para a variação"
 msgid "Amount that will be refunded for this line item (excluding taxes)."
 msgstr "Valor que será reembolsado para este item (sem impostos)."
 
+#: src/Admin/API/NavigationFavorites.php:121
+msgid "Invalid user_id provided"
+msgstr "O user_id fornecido é inválido "
+
 #: includes/admin/class-wc-admin-settings.php:656
 msgid "Search for a page&hellip;"
 msgstr "Pesquisar por uma página&hellip;"
@@ -3740,10 +3744,6 @@ msgstr "Limite o conjunto de resultados a recursos atribuídos a um ascendente e
 #: includes/class-wc-tax.php:831
 msgid "Tax class slug is invalid"
 msgstr "O slug da classe de impostos é inválido"
-
-#: src/Admin/API/NavigationFavorites.php:121
-msgid "Invalid user_id provided"
-msgstr "O user_id fornecido é inválido "
 
 #. translators: 1: page name 2: page ID
 #: includes/admin/class-wc-admin-settings.php:639
@@ -6134,6 +6134,14 @@ msgstr "Seu carrinho está vazio no momento!"
 msgid "Phone (optional)"
 msgstr "Telefone (opcional)"
 
+#: src/Blocks/Domain/Services/CheckoutFields.php:188
+msgid "Postal code (optional)"
+msgstr "CEP (opcional)"
+
+#: src/Blocks/Domain/Services/CheckoutFields.php:176
+msgid "State/County (optional)"
+msgstr "Estado/condado (opcional)"
+
 #. translators: %d is number of items in stock for product
 #. translators: %d stock amount (number of items in stock for product)
 #: src/Blocks/BlockTypes/ProductStockIndicator.php:58
@@ -6148,14 +6156,6 @@ msgstr "Telefone (opcional)"
 #: assets/client/blocks/product-stock-indicator.js:2
 msgid "%d left in stock"
 msgstr "%d restante em estoque"
-
-#: src/Blocks/Domain/Services/CheckoutFields.php:188
-msgid "Postal code (optional)"
-msgstr "CEP (opcional)"
-
-#: src/Blocks/Domain/Services/CheckoutFields.php:176
-msgid "State/County (optional)"
-msgstr "Estado/condado (opcional)"
 
 #: src/Blocks/Domain/Services/CheckoutFields.php:164
 msgid "City (optional)"
@@ -6777,6 +6777,10 @@ msgstr "O sistema de pagamento %s não está disponível."
 msgid "Database verified successfully."
 msgstr "Banco de dados verificado com sucesso."
 
+#: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-tools-v2-controller.php:581
+msgid "Verifying database... One or more tables are still missing: "
+msgstr "Verificando banco de dados... Uma ou mais tabelas ainda estão ausentes:"
+
 #: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-tools-v2-controller.php:214
 msgid "Verify base database tables"
 msgstr "Verificar tabelas de banco de dados base"
@@ -6851,10 +6855,6 @@ msgstr "Coletar e validar números de imposto da UE na finalização da compra"
 #: src/Internal/Admin/Notes/EUVATNumber.php:45
 msgid "If your store is based in the EU, we recommend using the EU VAT Number extension in addition to automated taxes. It provides your checkout with a field to collect and validate a customer's EU VAT number, if they have one."
 msgstr "Se sua loja está sediada na União Europeia, recomendamos o uso da extensão do número de imposto da UE, além dos impostos automatizados. Ele fornece à sua finalização de compra um campo para coletar e validar o número de imposto da UE de um cliente, se ele tiver um."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-tools-v2-controller.php:581
-msgid "Verifying database... One or more tables are still missing: "
-msgstr "Verificando banco de dados... Uma ou mais tabelas ainda estão ausentes:"
 
 #: src/Admin/Notes/Note.php:585
 msgid "The admin note layout has a wrong prop value."
@@ -8739,6 +8739,12 @@ msgstr "Quando verdadeiro, envia um link por e-mail para baixar a exportação p
 msgid "Parameters to pass on to the exported report."
 msgstr "Parâmetros a serem transmitidos para o relatório exportado."
 
+#: src/Admin/API/Reports/Coupons/Stats/Segmenter.php:284
+#: src/Admin/API/Reports/Orders/Stats/Segmenter.php:378
+#: src/Admin/API/Reports/Products/Stats/Segmenter.php:169
+msgid "product_includes parameter need to specify exactly one product when segmenting by variation."
+msgstr "O parâmetro product_includes precisa especificar exatamente um produto ao segmentar por variação."
+
 #: src/Admin/API/Reports/Coupons/Stats/Controller.php:182
 #: src/Admin/API/Reports/Orders/Stats/Controller.php:532
 #: src/Admin/API/Reports/Products/Stats/Controller.php:249
@@ -8900,12 +8906,6 @@ msgstr "Exportar URL do download."
 #: src/Admin/API/Reports/Revenue/Stats/Controller.php:175
 msgid "Total of shipping."
 msgstr "Total de entrega. "
-
-#: src/Admin/API/Reports/Coupons/Stats/Segmenter.php:284
-#: src/Admin/API/Reports/Orders/Stats/Segmenter.php:378
-#: src/Admin/API/Reports/Products/Stats/Segmenter.php:169
-msgid "product_includes parameter need to specify exactly one product when segmenting by variation."
-msgstr "O parâmetro product_includes precisa especificar exatamente um produto ao segmentar por variação."
 
 #: src/Admin/API/Options.php:299
 msgid "Array of options with associated values."
@@ -9309,6 +9309,10 @@ msgstr "ação completa por %s"
 msgid "action failed via %1$s: %2$s"
 msgstr "ação malsucedida por %1$s: %2$s"
 
+#: src/Internal/Admin/Loader.php:458 src/Internal/Admin/Settings.php:308
+msgid "Excluded report order statuses"
+msgstr "Status de pedido excluídos do relatório "
+
 #. translators: %s: exception message
 #: packages/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:156
 msgid "There was a failure scheduling the next instance of this action: %s"
@@ -9323,10 +9327,6 @@ msgstr "Uma nova fila iniciou o processamento. <a href=\"%s\">Exibir ações em 
 #: packages/action-scheduler/classes/abstracts/ActionScheduler_Store.php:330
 msgid "ActionScheduler_Action::$args too long. To ensure the args column can be indexed, action args should not be more than %d characters when encoded as JSON."
 msgstr "O ActionScheduler_Action::$args é muito longo. Para garantir que a coluna args possa ser indexada, args de ação não devem ter mais de %d caracteres quando codificados como JSON."
-
-#: src/Internal/Admin/Loader.php:458 src/Internal/Admin/Settings.php:308
-msgid "Excluded report order statuses"
-msgstr "Status de pedido excluídos do relatório "
 
 #: packages/action-scheduler/classes/ActionScheduler_AdminView.php:247
 #: assets/client/admin/product-editor/index.js:2
@@ -12441,6 +12441,10 @@ msgstr "ID de instância de entrega."
 msgid "Limit response to reviews published before a given ISO8601 compliant date."
 msgstr "Limita resposta para avaliações publicados depois de uma data especifica no formato ISO8601."
 
+#: src/StoreApi/Routes/V1/Products.php:152
+msgid "Limit response to resources created after a given ISO8601 compliant date."
+msgstr "Limita resposta para recursos publicados depois de uma data especifica no formato ISO8601. "
+
 #: includes/rest-api/Controllers/Version3/class-wc-rest-product-reviews-controller.php:847
 #: src/StoreApi/Schemas/V1/ProductReviewSchema.php:77
 msgid "Unique identifier for the product that the review belongs to."
@@ -12453,10 +12457,6 @@ msgstr "Recursos suportados para este sistema de pagamento."
 #: includes/class-wc-privacy.php:65 includes/class-wc-privacy.php:71
 msgid "WooCommerce Customer Downloads"
 msgstr "Downloads de clientes do WooCommerce"
-
-#: src/StoreApi/Routes/V1/Products.php:152
-msgid "Limit response to resources created after a given ISO8601 compliant date."
-msgstr "Limita resposta para recursos publicados depois de uma data especifica no formato ISO8601. "
 
 #. Translators: %s URL to erasure request screen.
 #: includes/admin/settings/class-wc-settings-accounts.php:107
@@ -12757,14 +12757,14 @@ msgstr "Será assim que seu nome será exibido na seção da conta e nos coment�
 msgid "If you have a coupon code, please apply it below."
 msgstr "Se você tiver um código de cupom, utilize-o abaixo."
 
-#: includes/gateways/paypal/includes/settings-paypal.php:94
-msgid "PayPal allows us to send one address. If you are using PayPal for shipping labels you may prefer to send the shipping address rather than billing. Turning this option off may prevent PayPal Seller protection from applying."
-msgstr "PayPal nos permite enviar um endereço. Se você estiver usando o PayPal para etiquetas de entrega, talvez prefira enviar o endereço de entrega no lugar do o de fatura. A desativação desta opção pode impedir a aplicação da proteção do vendedor do PayPal."
-
 #. translators: 1: last 4 digits
 #: includes/payment-tokens/class-wc-payment-token-echeck.php:50
 msgid "eCheck ending in %1$s"
 msgstr "Cheque eletrônico terminando em %1$s"
+
+#: includes/gateways/paypal/includes/settings-paypal.php:94
+msgid "PayPal allows us to send one address. If you are using PayPal for shipping labels you may prefer to send the shipping address rather than billing. Turning this option off may prevent PayPal Seller protection from applying."
+msgstr "PayPal nos permite enviar um endereço. Se você estiver usando o PayPal para etiquetas de entrega, talvez prefira enviar o endereço de entrega no lugar do o de fatura. A desativação desta opção pode impedir a aplicação da proteção do vendedor do PayPal."
 
 #. Translators: %1$s zone name, %2$s shipping method instance name.
 #: includes/gateways/cod/class-wc-gateway-cod.php:271
@@ -26943,6 +26943,11 @@ msgstr "Sua sessão expirou. <a href=\"%s\" class=\"wc-backward\">Voltar para a 
 msgid "Parent %s:"
 msgstr "%s ascendente:"
 
+#. translators: %s: attribute name
+#: includes/class-wc-post-types.php:236
+msgid "Parent %s"
+msgstr "%s ascendente "
+
 #: includes/class-wc-post-types.php:458
 #: assets/client/admin/chunks/analytics-report-coupons.js:1
 #: assets/client/admin/chunks/analytics-report-orders.js:1
@@ -27010,11 +27015,6 @@ msgstr "(incl. imposto)"
 #: includes/class-wc-countries.php:511
 msgid "(ex. VAT)"
 msgstr "(ex. VAT)"
-
-#. translators: %s: attribute name
-#: includes/class-wc-post-types.php:236
-msgid "Parent %s"
-msgstr "%s ascendente "
 
 #: includes/admin/views/html-admin-page-status-report.php:77
 msgid "The version of WooCommerce installed on your site."
